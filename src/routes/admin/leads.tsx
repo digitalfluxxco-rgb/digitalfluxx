@@ -70,11 +70,7 @@ function LeadsPage() {
       "utm_campaign",
     ];
     const rows = [cols.join(",")].concat(
-      visible.map((l) =>
-        cols
-          .map((c) => `"${list(l[c]).replace(/"/g, '""')}"`)
-          .join(","),
-      ),
+      visible.map((l) => cols.map((c) => `"${list(l[c]).replace(/"/g, '""')}"`).join(",")),
     );
     const blob = new Blob([rows.join("\n")], { type: "text/csv" });
     const url = URL.createObjectURL(blob);

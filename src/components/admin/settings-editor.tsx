@@ -9,8 +9,7 @@ type Group = { key: string; title: string; description: string };
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Value = Record<string, any>;
 
-const humanize = (key: string) =>
-  key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+const humanize = (key: string) => key.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
 export function SettingsEditor({ groups }: { groups: Group[] }) {
   const [values, setValues] = useState<Record<string, Value>>({});

@@ -27,7 +27,7 @@ export function useSiteContent(): SiteContent {
 }
 
 /** Read a settings group (brand, contact, hero, form, footer, seo, tracking, design). */
-export function useSettings<T = Record<string, any>>(group: string, fallback: T): T {
+export function useSettings<T = Record<string, unknown>>(group: string, fallback: T): T {
   const { settings } = useSiteContent();
   const value = settings[group];
   if (!value || typeof value !== "object") return fallback;

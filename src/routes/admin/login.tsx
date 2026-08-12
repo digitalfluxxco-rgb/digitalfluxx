@@ -54,7 +54,10 @@ function AdminLogin() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <form onSubmit={onSubmit} className="w-full max-w-sm space-y-4 rounded-xl border border-border p-6">
+      <form
+        onSubmit={onSubmit}
+        className="w-full max-w-sm space-y-4 rounded-xl border border-border p-6"
+      >
         <div>
           <p className="font-mono text-[0.66rem] uppercase tracking-[0.18em] text-muted-foreground">
             Digitalfluxx

@@ -28,11 +28,21 @@ export const ADMIN_NAV: NavItem[] = [
   { to: "/admin", label: "Overview", icon: LayoutDashboard, exact: true },
   { to: "/admin/leads", label: "Leads", icon: Inbox },
   { to: "/admin/content", label: "Page Content", icon: Sparkles },
-  { to: "/admin/collections/$key", params: { key: "services" }, label: "Services", icon: BriefcaseBusiness },
+  {
+    to: "/admin/collections/$key",
+    params: { key: "services" },
+    label: "Services",
+    icon: BriefcaseBusiness,
+  },
   { to: "/admin/collections/$key", params: { key: "verticals" }, label: "Verticals", icon: Layers },
   { to: "/admin/case-studies", label: "Case Studies", icon: FileText },
   { to: "/admin/collections/$key", params: { key: "faqs" }, label: "FAQs", icon: HelpCircle },
-  { to: "/admin/collections/$key", params: { key: "navigation_items" }, label: "Navigation", icon: ListChecks },
+  {
+    to: "/admin/collections/$key",
+    params: { key: "navigation_items" },
+    label: "Navigation",
+    icon: ListChecks,
+  },
   { to: "/admin/media", label: "Media", icon: ImageIcon },
   { to: "/admin/settings", label: "Settings", icon: Settings },
 ];

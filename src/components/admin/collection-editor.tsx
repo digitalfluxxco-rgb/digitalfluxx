@@ -79,11 +79,7 @@ export function FieldInput({
           }
         />
       ) : (
-        <input
-          className={base}
-          value={value ?? ""}
-          onChange={(e) => onChange(e.target.value)}
-        />
+        <input className={base} value={value ?? ""} onChange={(e) => onChange(e.target.value)} />
       )}
       {field.kind === "tags" ? (
         <span className="block text-[0.7rem] text-muted-foreground">One item per line.</span>
@@ -192,9 +188,7 @@ export function CollectionEditor({ collection }: { collection: Collection }) {
                     <ChevronDown
                       className={cn("h-4 w-4 transition-transform", open && "rotate-180")}
                     />
-                    <span className="truncate">
-                      {row[collection.titleField] || "Untitled"}
-                    </span>
+                    <span className="truncate">{row[collection.titleField] || "Untitled"}</span>
                     {row["enabled"] === false ? (
                       <span className="rounded bg-muted px-1.5 py-0.5 text-[0.65rem] text-muted-foreground">
                         hidden

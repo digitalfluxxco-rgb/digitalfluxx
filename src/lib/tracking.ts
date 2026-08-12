@@ -28,7 +28,6 @@ export type TrackEvent =
   | "Scroll50"
   | "Scroll90";
 
-
 type Payload = Record<string, string | number | boolean | undefined>;
 
 declare global {

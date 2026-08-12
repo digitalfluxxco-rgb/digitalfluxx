@@ -65,9 +65,7 @@ export function Hero() {
 
           <h1 className="mt-6 text-[2.25rem] font-extrabold leading-[1.06] tracking-tight sm:text-5xl lg:text-[3.9rem]">
             <span className="hero-line hero-line-2 block">{hero.headline_line_1}</span>
-            <span className="hero-line hero-line-3 block text-primary">
-              {hero.headline_line_2}
-            </span>
+            <span className="hero-line hero-line-3 block text-primary">{hero.headline_line_2}</span>
           </h1>
 
           <p className="hero-line hero-line-4 mt-5 font-mono text-[0.78rem] uppercase tracking-[0.12em] text-muted-foreground">

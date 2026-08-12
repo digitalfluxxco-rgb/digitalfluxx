@@ -13,7 +13,6 @@ import { FloatingContactButtons } from "@/components/site/floating-contact";
 import { SiteContentProvider, siteContentQuery } from "@/lib/site-content";
 import { captureAttribution, track } from "@/lib/tracking";
 
-
 const TITLE = "Digitalfluxx | Performance Acquisition for Forex, iGaming & Complex Verticals";
 const DESCRIPTION =
   "Digitalfluxx builds paid acquisition, funnels, attribution and multi-geo growth systems for Forex, affiliate, FinTech, iGaming, crypto and other high-friction verticals.";
@@ -102,4 +101,3 @@ function Index() {
     </SiteContentProvider>
   );
 }
-

@@ -39,7 +39,10 @@ export const adminBootstrap = createServerFn({ method: "POST" })
       user_metadata: { username },
     });
     if (created.error || !created.data.user) {
-      return { ok: false as const, error: created.error?.message ?? "Could not create the account." };
+      return {
+        ok: false as const,
+        error: created.error?.message ?? "Could not create the account.",
+      };
     }
 
     const { error } = await supabaseAdmin.from("admin_users").insert({
