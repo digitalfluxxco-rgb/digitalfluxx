@@ -75,13 +75,18 @@ export const adminLogin = createServerFn({ method: "POST" })
       return { ok: false as const, error: "Invalid username or password." };
     }
 
-const supabaseUrl = process.env["SUPABASE_URL"]!;
 const key = process.env["SUPABASE_PUBLISHABLE_KEY"]!;
-
-const authClient = createClient(supabaseUrl, key, {
-  auth: {
-    persistSession: false,
-    autoRefreshToken: false,
+const authClient = createClient(process.env["SUPABASE_URL"]!, key, {
+  auth: { persistSession: false, autoRefreshToken: false },
+  global: {
+    fetch: (input, init) => {
+      const h = new Headers(init?.headers);
+      if (key.startsWith("sb_") && h.get("Authorization") === `Bearer ${key}`) {
+        h.delete("Authorization");
+      }
+      h.set("apikey", key);
+      return fetch(input, { ...init, headers: h });
+    },
   },
 });
 
