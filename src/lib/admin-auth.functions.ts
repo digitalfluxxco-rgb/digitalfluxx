@@ -95,9 +95,14 @@ export const adminLogin = createServerFn({ method: "POST" })
       password: data.password,
     });
 
-    if (signIn.error || !signIn.data.session) {
-      return { ok: false as const, error: "Invalid username or password." };
-    }
+if (signIn.error || !signIn.data.session) {
+  console.error("ADMIN LOGIN ERROR:", signIn.error);
+
+  return {
+    ok: false as const,
+    error: signIn.error?.message ?? "No session returned from Supabase.",
+  };
+}
 
     await supabaseAdmin
       .from("admin_users")
