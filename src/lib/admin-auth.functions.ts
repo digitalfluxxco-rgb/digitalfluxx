@@ -90,6 +90,15 @@ const authClient = createClient(process.env["SUPABASE_URL"]!, key, {
   },
 });
 
+    console.log("SUPABASE_URL:", process.env["SUPABASE_URL"]);
+console.log(
+  "PUBLISHABLE_KEY_PREFIX:",
+  process.env["SUPABASE_PUBLISHABLE_KEY"]?.slice(0, 25),
+);
+console.log(
+  "PUBLISHABLE_KEY_LENGTH:",
+  process.env["SUPABASE_PUBLISHABLE_KEY"]?.length,
+);
     const signIn = await authClient.auth.signInWithPassword({
       email: adminEmail(username),
       password: data.password,
